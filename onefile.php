@@ -18,10 +18,16 @@ $site = new SimpleXMLElement($xmlstr);
     <div style='width:1000px; margin:100px auto 0 auto; background:#fff; padding:15px; overflow:hidden;'>
       <div style='width:275px; height:100%; float:left;'><!-- menu div-->
         <ul style='list-style:none;'>
+          <li>About ECFMG
+            <ul>
+              <li><a href='/about/staff/'>Senior Staff</a></li>
+            </ul>
+          </li>
           <li>ECHO 
             <ul>
               <li><a href='/echo/about/'>About ECHO</a></li>
               <li><a href='/echo/acgme/'>ACGME Core Competencies</a></li>
+              <li><a href='/echo/team/'>Health Care Team</a></li>
             </ul>
           </li>
           <li>EICS
@@ -38,7 +44,6 @@ $site = new SimpleXMLElement($xmlstr);
         <?php
         echo "<h1>" . $site->sections->{$_GET['section']}->{$_GET['pagename']}->headline . "</h1>" . PHP_EOL;
         echo "<p>" . $site->sections->{$_GET['section']}->{$_GET['pagename']}->content . "</p>" . PHP_EOL;
-        echo "<p>" . $site->sections->{$_GET['section']}->{$_GET['pagename']}->content[1] . "</p>" . PHP_EOL;
         ?>
       </div><!-- close float right div -->
     </div><!-- close 1000px div -->
