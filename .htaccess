@@ -1,0 +1,14 @@
+IndexIgnore *
+Options -Indexes
+
+RewriteEngine on
+#RewriteBase /
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# single file to unlimited pages rewrite - question mark after final forward slash makes forward slash optional
+RewriteRule ^([a-zA-Z-]+)/([a-z-]+)/?$ onefile.php?section=$1&pagename=$2
+#RewriteRule ^([a-zA-Z-]+)/([a-z-]+)-([0-9-]+)$ onefile.php?section=$1&pagename=$2&pagenumber=$3
